@@ -97,7 +97,8 @@ def leaders_view(request, id):
     return render(request, 'home/leaders.html', context)
 
 def feed_view(request):
-    feed = Feed_list.objects.all()
+    feed = Feed_list.objects.all().extra(select=
+    {'comment_count':'SELECT count(contents) FROM home_comment WHERE home_comment.post_id=home_feed_list.id'},)
     context = {
         'feed':feed
     }
@@ -108,11 +109,13 @@ def comments(request, id):
     comment = Comment.objects.filter(post=feed,).order_by('-id')
     if request.method == 'POST':
         form = commentForm(request.POST)
+
         if form.is_valid():
-           
-            contents = form.cleaned_data['contents']
-            # comments.save()
-        return redirect('feed-details',id=id)
+            contents = request.POST.get('contents')
+            comment = Comment.objects.create(post=feed, contents=contents, user=request.user)
+            comment.save()
+            return redirect('feed-details',id=id)
+
     form = commentForm()
     context = {
         'feed':feed,

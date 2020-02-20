@@ -1,0 +1,23 @@
+.commentForm p{
+    display: block;
+}
+.commentForm p label{
+    display: none;
+    margin-right: 300px;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.commentForm input{
+    height: 60px;
+    width: 650px;
+    text-indent: 55px;
+    color:black
+}
+.commentForm{
+    float: left;
+    margin-bottom: 40px;
+}
+.commentForm button{
+    width: 100%;
+}
