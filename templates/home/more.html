@@ -98,11 +98,11 @@
                                      <br>
                                       <div class="links" style="display: inline-flex;">
                                         <a style="padding: 0px 0px 0px 100px;" href="{% url 'feed-details' feed.id%}">
-                                            <b>{{feed.comment_count}} 
+                                            <b>{{comments.count}} 
                                                <i class=" far fa-comment-alt"></i></b>
                                         </a>
                                         <a style="padding: 0px 0px 0px 100px;" href="{% url 'feed-details' feed.id%}">
-                                            <b>{{feed.comment_count}} 
+                                            <b>{{comments.count}} 
                                                 <i style="color: red;" class="fa fa-heart"></i>
                                             </b>
                                         </a>
@@ -190,10 +190,4 @@
 
 {% block footer%}
 {%endblock footer%}
-
-
-<!-- {% if feed.image%}
-<img src="{{feed.image.url}}" alt="">
-{% endif%}
-
 
