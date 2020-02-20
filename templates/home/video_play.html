@@ -1,0 +1,352 @@
+{% load static%}
+<title>Video</title>
+{% for data in video %}
+<video controls autoplay width="100%" height="100%">
+    <source src="{{data.video.url}}">
+</video>
+{% endfor%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en-NZ">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description"
+        content="Alive in the heart of Christchurch, City is a church near you for everyday people to connect and belong through a personal friendship with Jesus.">
+    <meta name="keywords" content="church,churches christchurch,churches in christchurch,city,pentecostal,christchurch">
+    <meta name="thumbnail" content="https://city.org.nz/img/background_01_1330.jpg" />
+    <title>City Church Christchurch | Real Church, Real People</title>
+    <link rel="stylesheet" href="{% static 'home/css/foundation.css'%}">
+    <link rel="stylesheet" href="{% static 'wireframe-theme.css'%}">
+    <script>document.createElement("picture");</script>
+    <script src="{% static 'home/js/picturefill.js'%}" class="picturefill" async="async"></script>
+    <link rel="stylesheet" href="{% static 'home/css/main.css'%}">
+    <link rel="stylesheet" href="{% static 'home/css/main2.css'%}"> -->
+
+
+    <!-- Anti-flicker -->
+    <!-- <style>
+        .async-hide {
+            opacity: 0 !important
+        }
+    </style>
+    <script>(function (a, s, y, n, c, h, i, d, e) {
+            s.className += ' ' + y; h.start = 1 * new Date;
+            h.end = i = function () { s.className = s.className.replace(RegExp(' ?' + y), '') };
+            (a[n] = a[n] || []).hide = h; setTimeout(function () { i(); h.end = null }, c); h.timeout = c;
+        })(window, document.documentElement, 'async-hide', 'dataLayer', 1000,
+            { 'GTM-K3TDTWW': true });</script> -->
+
+    <!-- Facebook -->
+    <!-- <meta property="og:url" content="https://city.org.nz" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="City Church | Real Church, Real People" />
+    <meta property="og:description"
+        content="Alive in the heart of Christchurch, join us this Sunday for church with a difference that makes a difference." />
+    <meta property="og:image" content="https://city.org.nz/img/fb_invite_04_1200.jpg" />
+    <meta property="og:site_name" content="City Church Christchurch" />
+
+    <link rel="shortcut icon" href="/favicon.ico" /> -->
+
+    <!-- Mobile Chrome colour theme -->
+    <!-- <meta name="theme-color" content="#141414"> -->
+
+    <!-- Humans -->
+    <!-- <link type="text/plain" rel="author" href="/humans.txt" /> -->
+
+    <!-- Fonts -->
+    <!-- <link
+        href="https://fonts.googleapis.com/css?family=Heebo:300%7CNunito+Sans:200,300,400,600,700,800,900%7CMontserrat:100,200,300,400,500,600,700,800,900%7CMuli:400,700,800,900"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/fontscity.css'%}" /> -->
+
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'home/css/cssstuff.css'%}" /> -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140815210-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-140815210-1');
+    </script> -->
+
+    <!-- Custom JS -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{% static 'home/js/jsstuff.js'%}"></script> -->
+    <!-- SoundCloud RSS -->
+    <!-- <link type="application/rss+xml" rel="alternate" title="Podcast"
+        href="https://feeds.soundcloud.com/users/soundcloud:users:318910010/sounds.rss" />
+
+    <script src="{% static 'home/js/typed.js'%}"></script> -->
+
+    <!--
+  <PageMap>
+    <DataObject type="thumbnail">
+      <Attribute name="src" value="https://city.org.nz/img/background_01_1330.jpg"/>
+      <Attribute name="width" value="104"/>
+      <Attribute name="height" value="104"/>
+    </DataObject>
+  </PageMap>
+-->
+
+<!-- </head>
+
+<body class="no-js">
+
+    <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+    "@type": "WebSite",
+    "name": "City Church Christchurch",
+    "inLanguage": "en-NZ",
+    "url": "https://city.org.nz/#WebSite",
+    "award": [
+      "Best Church Website of 2019, Non-Megachurch Edition",
+      "The 10 Best Church Website Designs Of 2019",
+      "7 Church Website Design Trends with Examples"
+      ],
+    "description":"There's something for everyone at City Church Christchurch and our website is no exception. Browse our online home for great content and join us this Sunday for church in Christchurch.", 
+    "publisher": {
+      "@type": "Organization",
+      "name": "City Church Christchurch",
+      "@id": "https://city.org.nz/#Organization",
+      "image": "https://city.org.nz/img/city_01_300.jpg"
+      }
+    },
+    {
+    "@type": "WebPage",
+      "url": "https://city.org.nz/#WebPage",
+      "name": "City Church Christchurch | Real Church, Real People",
+      "about":"City Church Christchurch",
+      "description":"City Church Christchurch is an authentic church community for everyday people of all ages, cultures and backgrounds. Whoever you are and wherever you've been, you're welcome to join us to connect, be inspired and grow through Jesus and a genuine sense of belonging.", 
+      "lastReviewed":"2020/01/08",
+        "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://city.org.nz/#WebSite"
+      }
+    }
+    ]
+  }
+</script>
+
+    <div class="row row-title-1">
+       
+        <div class="columns small-12 column-title-3">
+            <div class="html-element html-element-title-2"><video id="bgvid" autoplay loop  preload
+                    poster="https://city.org.nz/img/church_01_2000.jpg">
+                    <source src="{% static 'home/images/v.mp4'%}" type='video/mp4' />
+                </video></div>
+            <div id="gradient">
+                <div id="gradient5">
+                    <svg width="100vw" height="100vh" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <radialGradient id="gradient1" cx="50%" cy="50%" fx="50%" fy="50%" r="50%">
+                                <stop offset="0%" stop-color="rgba(210, 33, 54, .9)"></stop>
+                                <stop offset="100%" stop-color="rgba(210, 33, 54)" stop-opacity="0"></stop>
+                            </radialGradient>
+                            <radialGradient id="gradient2" cx="50%" cy="50%" fx="50%" fy="50%" r="50%">
+                                <stop offset="0%" stop-color="rgba(33,118,255, .9)"></stop>
+                                <stop offset="100%" stop-color="rgba(33,118,255)" stop-opacity="0"></stop>
+                            </radialGradient>
+                            <radialGradient id="gradient3" cx="50%" cy="50%" fx="50%" fy="50%" r="50%">
+                                <stop offset="0%" stop-color="rgba(94,35,157, .9)"></stop>
+                                <stop offset="100%" stop-color="rgba(94,35,157)" stop-opacity="0"></stop>
+                            </radialGradient>
+                            <radialGradient id="gradient4" cx="50%" cy="50%" fx="50%" fy="50%" r="50%">
+                                <stop offset="0%" stop-color="rgba(210, 33, 54, .9)"></stop>
+                                <stop offset="100%" stop-color="rgba(210, 33, 54)" stop-opacity="0"></stop>
+                            </radialGradient>
+                        </defs>
+                        <rect x="1" y="1%" width="100%" height="100%" fill="url(#gradient1)">
+                            <animate attributeName="x" values="-40%;0%;-40%" repeatCount="indefinite"></animate>
+                            <animate attributeName="y" values="0%;40%;0%" repeatCount="indefinite"></animate>
+                            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50"
+                                dur="13s" repeatCount="indefinite"></animateTransform>
+                        </rect>
+                        <rect x="1" y="1%" width="100%" height="100%" fill="url(#gradient2)">
+                            <animate attributeName="x" values="-50%;0%;-50%" repeatCount="indefinite"></animate>
+                            <animate attributeName="y" values="50%;0%;50%" repeatCount="indefinite"></animate>
+                            <animateTransform attributeName="transform" type="rotate" from="100 50 50" to="460 50 50"
+                                dur="9s" repeatCount="indefinite"></animateTransform>
+                        </rect>
+                        <rect x="1" y="1%" width="100%" height="100%" fill="url(#gradient3)">
+                            <animate attributeName="x" values="-30%;0%;-30%" repeatCount="indefinite"></animate>
+                            <animate attributeName="y" values="30%;0%;30%" repeatCount="indefinite"></animate>
+                            <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50"
+                                dur="11s" repeatCount="indefinite"></animateTransform>
+                        </rect>
+                        <rect x="1" y="1%" width="100%" height="100%" fill="url(#gradient4)">
+                            <animate attributeName="x" values="-50%;0%;-50%" repeatCount="indefinite"></animate>
+                            <animate attributeName="y" values="0%;50%;0%" repeatCount="indefinite"></animate>
+                            <animateTransform attributeName="transform" type="rotate" from="460 50 50" to="100 50 50"
+                                dur="7s" repeatCount="indefinite"></animateTransform>
+                        </rect>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="columns small-12 column-title-4">
+            <div class="container container-title-2"><a href="#" class="responsive-picture picture-link-arrow-1"
+                    title="Scroll to top" id="scrollToTop">
+                    <picture><img alt="Scroll To Top Arrow" src="https://city.org.nz/img/arrow_up_01_45.png">
+                    </picture>
+                </a>
+            </div>
+           
+        </div>
+
+        <div class="columns small-12 column-title-2">
+
+            <nav class="subgrid subgrid-nav-1">
+                <div class="row subgrid-row-nav-1">
+                    <div class="columns small-12 subgrid-column-nav-1">
+                        
+                        
+                        <div class="container container-nav-1">
+                            <a class="link-button button-nav-2" href="#"></a>
+                            <a class="link-button button-nav-2" href="#"></a>
+                            <a class="link-button button-nav-2" href="#"></a>
+                            <a class="link-button button-nav-2" href="#"></a>
+                            <a class="link-button button-nav-2" href="#"></a>
+                        </div>
+                        <div class="html-element html-element-nav-3">
+                            <div id="nav-icon2">
+
+                            </div>
+                        </div>
+                        <div class="html-element html-element-nav-1">
+                            <div id="nav-icon1">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row subgrid-row-nav-2">
+                    <div class="container container-nav-5">
+                        <a class="link-button button-nav-4" href="https://city.org.nz/ministries">Ministries</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/sozo">Care &amp; Prayer</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/kids">Children</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/connect">Connect Groups</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/kingdom-library">Kingdom
+                            Library</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/missions">Missions</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/prophetic">Prophetic</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/rodem-house">Rodem House</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/schools">School Counselling</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/worship">Worship</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/gen">Young Adults</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/youth">Youth City</a>
+                    </div>
+                    <div class="container container-nav-6">
+                        <a class="link-button button-nav-4" href="https://city.org.nz/next">Next Steps</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/baptism">Baptism</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/pray">Bible &amp; Prayer</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/christchurch">Church</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/connect">Connect Groups</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/sozo">Counselling</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/give">Giving</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/internship">Internship</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/jesus">Jesus</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/missions">Missions</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/prophetic">Prophetic</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/volunteer">Volunteer</a>
+                    </div>
+                    <div class="container container-nav-7">
+                        <a class="link-button button-nav-4" href="https://city.org.nz/contact">Contact Us</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/faqs">FAQ</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/give">Donate</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/prayer">Request Prayer</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/parking">Lease Parking</a>
+                    </div>
+                    <div class="container container-nav-8">
+                        <a class="link-button button-nav-4" href="https://city.org.nz/about">Who We Are</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/christchurch">Church Services</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/garth">Ps Garth</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/faqs">FAQ</a>
+                    </div>
+                    <div class="container container-nav-9">
+                        <a class="link-button button-nav-4" href="https://city.org.nz/kit">City Kit</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/kit/measurements">Bible
+                            Measurements</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/kit/bible-overview">Bible
+                            Overview</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/devotions">Devotions</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/kingdom-library">Kingdom
+                            Library</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/sermons">Messages</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/kit/tithe">Tithe Calculator</a>
+                    </div>
+                    <div class="columns small-6 subgrid-column-nav-2">
+                        <div class="html-element html-element-nav-2"><video id="vid_menu" muted preload
+                                poster="/img/b_w_01_700.jpg">
+                                <source src="/vids/b_w_01.mp4" type='video/mp4' />
+                            </video></div>
+                    </div>
+
+                    <script>
+                        $(document).ready(function () {
+                            var options = {
+                                strings: ["community.", "family.", "clarity.", "purpose.", "hope.", "rest.", "life.", "Jesus.", "peace.", "joy.", "friends.", "God.", "acceptance.", "truth.", "love.", "freedom.", "compassion.", "healing.", "faith.", "meaning.", "direction.", "wisdom.", "inspiration.", "revival.", "strength.", "unity.", "support.", "victory.", "my church.", "my home."],
+                                typeSpeed: 100,
+                                backSpeed: 40,
+                                backDelay: 750,
+                                loop: true
+                            }
+                            var typed = new Typed("#typing", options);
+                        });
+                    </script>
+
+
+
+                    <script src="https://city.org.nz/js/outofview.js"></script>
+                    <script src="https://city.org.nz/js/what-input.min.js"></script>
+                    <script src="https://city.org.nz/js/foundation.min.js"></script>
+                    <script>$(document).foundation();</script>
+                    <div id="fb-root"></div>
+                    <script>(function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s); js.id = id;
+                            js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=1640497236217712";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                    <script src="{% static 'home/js/choices.js'%}"></script>
+</body>
+
+</html> -->

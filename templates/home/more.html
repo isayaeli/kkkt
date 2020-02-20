@@ -1,0 +1,14 @@
+{% if feed.image%}
+<img src="{{feed.image.url}}" alt="">
+{% endif%}
+
+<form action="" method="POST">
+    {% csrf_token%}
+    {{form.as_p}}
+    <button type="submit">add comment</button>
+</form>
+
+
+{% for comments in comments%}
+ {{comments.contents}}
+{% endfor%}

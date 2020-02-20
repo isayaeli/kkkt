@@ -1,0 +1,190 @@
+<html>
+    <!DOCTYPE html>
+    <html lang="en-NZ">
+    {% load static%}
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description"
+            content="Alive in the heart of Christchurch, City is a church near you for everyday people to connect and belong through a personal friendship with Jesus.">
+        <meta name="keywords" content="church,churches christchurch,churches in christchurch,city,pentecostal,christchurch">
+        <meta name="thumbnail" content="https://city.org.nz/img/background_01_1330.jpg" />
+        {% block title%}
+        <title>base</title>
+        {% endblock title%}
+      
+
+        <link rel="stylesheet" href="{% static 'home/css/foundation.css'%}">
+        <link rel="stylesheet" href="{% static 'wireframe-theme.css'%}">
+        <script>document.createElement("picture");</script>
+        <script src="{% static 'home/js/picturefill.js'%}" class="picturefill" async="async"></script>
+        <link rel="stylesheet" href="{% static 'home/css/main.css'%}">
+        <link rel="stylesheet" href="{% static 'home/css/main2.css'%}">
+        <link rel="stylesheet" href="{% static 'home/css/all.css'%}">
+    
+        <script src="{% static 'home/js/dist/leaflet.ajax.js'%}"></script>
+    
+        <!-- Anti-flicker -->
+        <style>
+            .async-hide {
+                opacity: 0 !important
+            }
+        </style>
+        <script>(function (a, s, y, n, c, h, i, d, e) {
+                s.className += ' ' + y; h.start = 1 * new Date;
+                h.end = i = function () { s.className = s.className.replace(RegExp(' ?' + y), '') };
+                (a[n] = a[n] || []).hide = h; setTimeout(function () { i(); h.end = null }, c); h.timeout = c;
+            })(window, document.documentElement, 'async-hide', 'dataLayer', 1000,
+                { 'GTM-K3TDTWW': true });</script>
+    
+        <!-- Facebook -->
+        <meta property="og:url" content="https://city.org.nz" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="City Church | Real Church, Real People" />
+        <meta property="og:description"
+            content="Alive in the heart of Christchurch, join us this Sunday for church with a difference that makes a difference." />
+        <meta property="og:image" content="https://city.org.nz/img/fb_invite_04_1200.jpg" />
+        <meta property="og:site_name" content="City Church Christchurch" />
+    
+        <link rel="shortcut icon" href="/favicon.ico" />
+    
+        <!-- Mobile Chrome colour theme -->
+        <meta name="theme-color" content="#141414">
+    
+        <!-- Humans -->
+        <link type="text/plain" rel="author" href="/humans.txt" />
+    
+        <!-- Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Heebo:300%7CNunito+Sans:200,300,400,600,700,800,900%7CMontserrat:100,200,300,400,500,600,700,800,900%7CMuli:400,700,800,900"
+            rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'home/css/fontscity.css'%}" />
+    
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'home/css/cssstuff.css'%}" />
+    
+        
+        <!-- Custom JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="{% static 'home/js/jsstuff.js'%}"></script>
+        <!-- SoundCloud RSS -->
+        <!--  -->
+    
+        <script src="{% static 'home/js/typed.js'%}"></script>
+    
+    
+      <!-- <PageMap>
+        <DataObject type="thumbnail">
+          <Attribute name="src" value="https://city.org.nz/img/background_01_1330.jpg"/>
+          <Attribute name="width" value="104"/>
+          <Attribute name="height" value="104"/>
+        </DataObject>
+      </PageMap> -->
+   
+
+    </head>
+    <body>
+        {% block nav%}
+        <!-- header-->
+        <header class="main-header dark-header fs-header sticky" style="background-color:#33adff;">
+            <div class="header-inner">
+                <div class="logo-holder">
+                    <a href="{% url 'home'%}"><img src="{% static 'home/images/image.png'%}" alt=""></a>
+                </div>
+                <div class="header-search vis-header-search">
+                    <form action="." method="GET">
+                        <div class="header-search-input-item">
+                            <input style="width: 300px; border-right: 1px solid black;" name="q" type="text"
+                                placeholder="Keywords" value="" />
+                            <input style="width: 300px; border-right: 1px solid black;" name="q" type="text"
+                                placeholder="dominion" value="" />
+                        </div>
+                        <!-- <div class="header-search-select-item">
+                                                        <select data-placeholder="All Categories" class="chosen-select">
+                                                            <option>All Categories</option>
+                                                            <option>Shops</option>
+                                                            <option>Hotels</option>
+                                                            <option>Restaurants</option>
+                                                            <option>Fitness</option>
+                                                            <option>Events</option>
+                                                        </select>
+                                                    </div> -->
+                        <button style="background-color: white;" class="header-search-button"
+                            onclick="window.location.href='listing.html'">
+                            <i style="color: black;" class="fa fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                {% if user.is_authenticated%}
+                <div class="show-reg-form modal-open">Logout</div>
+                {% else%}
+                <div class="show-reg-form modal-open">Language</div>
+                <div class="show-reg-form modal-open"></i>Sign In</div>
+                <div class="show-reg-form modal-open">Log in</div>
+                {% endif%}
+        
+                <!-- nav-button-wrap-->
+                <!-- <div class="nav-button-wrap color-bg">
+                            <div class="nav-button">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div> -->
+                <!-- nav-button-wrap end-->
+            </div>
+        </header>
+        <!--  header end -->
+        {% endblock nav%}
+        {% block contents%}
+        {% endblock contents%}
+
+
+        {% block footer%}
+        <script>
+            $(document).ready(function () {
+                var options = {
+                    strings: ["community.", "family.", "clarity.", "purpose.", "hope.", "rest.", "life.", "Jesus.", "peace.", "joy.", "friends.", "God.", "acceptance.", "truth.", "love.", "freedom.", "compassion.", "healing.", "faith.", "meaning.", "direction.", "wisdom.", "inspiration.", "revival.", "strength.", "unity.", "support.", "victory.", "my church.", "my home."],
+                    typeSpeed: 100,
+                    backSpeed: 40,
+                    backDelay: 750,
+                    loop: true
+                }
+                var typed = new Typed("#typing", options);
+            });
+        </script>
+        
+        <footer class="row row-footer-1">
+            <div class="columns small-12 column-footer-1">
+                <div class="subgrid subgrid-footer-1">
+                    <div class="row subgrid-row-footer-3">
+                        <div class="columns small-12 subgrid-column-footer-3">
+                            <div class="container container-footer-3">
+                                <div class="html-element html-element-footer-1">
+                                    <p class="paragraph paragraph-footer-1">Copyright © 2020 City Church Christchurch. All
+                                        rights reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+          
+        </footer>
+        {% endblock footer%}
+        <script src="https://city.org.nz/js/outofview.js"></script>
+        <script src="https://city.org.nz/js/what-input.min.js"></script>
+        <script src="https://city.org.nz/js/foundation.min.js"></script>
+        <script>$(document).foundation();</script>
+        <div id="fb-root"></div>
+        <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=1640497236217712";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+        <script src="{% static 'home/js/choices.js'%}"></script>
+        <script src="{% static 'home/js/all.js'%}"></script>
+    </body>
+</html>

@@ -1,0 +1,403 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block title%}
+<title>Search</title>
+{% endblock title%}
+
+
+{% block contents%}
+<!--=============== Listing css  ===============-->
+<link type="text/css" rel="stylesheet" href="{% static 'home/css/reset.css'%}">
+<link type="text/css" rel="stylesheet" href="{% static 'home/css/plugins.css'%}">
+<link type="text/css" rel="stylesheet" href="{% static 'home/css/style.css'%}">
+<link type="text/css" rel="stylesheet" href="{% static 'home/css/color.css'%}">
+<!--
+<body>
+    <!--loader-->
+<div class="loader-wrap">
+    <div class="pin"></div>
+    <div class="pulse"></div>
+</div>
+<!--loader end-->
+<!-- Main  -->
+<div id="main">
+    <!-- header-->
+    <header class="main-header dark-header fs-header sticky">
+        <div class="header-inner">
+            <div class="logo-holder">
+                <a href="index.html"><img src="{% static 'home/images/image.png'%}" alt=""></a>
+            </div>
+
+            <!-- nav-button-wrap-->
+            <!-- <div class="nav-button-wrap color-bg">
+                    <div class="nav-button">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div> -->
+            <!-- nav-button-wrap end-->
+        </div>
+    </header>
+    <!--  header end -->
+    <!-- wrapper -->
+    <div id="wrapper">
+        <div class="content">
+            <!-- Map -->
+            <div class="map-container column-map right-pos-map">
+                <div id="map-main"></div>
+                <ul class="mapnavigation">
+                    <li><a href="#" class="prevmap-nav">Prev</a></li>
+                    <li><a href="#" class="nextmap-nav">Next</a></li>
+                </ul>
+                <div class="scrollContorl mapnavbtn" title="Enable Scrolling"><span><i class="fa fa-lock"></i></span>
+                </div>
+            </div>
+            <!-- Map end -->
+            <!--col-list-wrap -->
+            <div class="col-list-wrap left-list">
+                <div class="listsearch-options fl-wrap" id="lisfw">
+                    <div class="container">
+                        <div class="listsearch-header fl-wrap">
+                            <!-- <h3>Results For : <span>Food and Drink</span></h3>
+                                <div class="listing-view-layout">
+                                    <ul>
+                                        <li><a class="grid active" href="#"><i class="fa fa-th-large"></i></a></li>
+                                        <li><a class="list" href="#"><i class="fa fa-list-ul"></i></a></li>
+                                    </ul>
+                                </div> -->
+                        </div>
+                        <!-- listsearch-input-wrap  -->
+                        <div class="listsearch-input-wrap fl-wrap">
+                            <!-- <div class="listsearch-input-item">
+                                    <i class="mbri-key single-i"></i>
+                                    <input type="text" placeholder="Keywords?" value="" />
+                                </div> -->
+                            <div class="listsearch-input-item">
+                                <!-- <select data-placeholder="Location" class="chosen-select" multiple>
+                                        <option>All Locations</option>
+                                        <option>Bronx</option>
+                                        <option>Brooklyn</option>
+                                        <option>Manhattan</option>
+                                        <option>Queens</option>
+                                        <option>Staten Island</option>
+                                    </select> -->
+                            </div>
+                            <div class="listsearch-input-item">
+                                <!-- <select data-placeholder="All Categories" class="chosen-select">
+                                        <option>All Categories</option>
+                                        <option>Shops</option>
+                                        <option>Hotels</option>
+                                        <option>Restaurants</option>
+                                        <option>Fitness</option>
+                                        <option>Events</option>
+                                    </select> -->
+                            </div>
+                            <div class="listsearch-input-text" id="autocomplete-container">
+                                <!-- <label><i class="mbri-map-pin"></i> Enter Addres </label>
+                                    <input type="text" placeholder="Destination , Area , Street" id="autocomplete-input"
+                                        class="qodef-archive-places-search" value="" />
+                                    <a href="#" class="loc-act qodef-archive-current-location"><i
+                                            class="fa fa-dot-circle-o"></i></a> -->
+                            </div>
+                            <!-- hidden-listing-filter -->
+                            <div class="hidden-listing-filter fl-wrap">
+                                <!-- <div class="distance-input fl-wrap">
+                                        <div class="distance-title"> Radius around selected destination <span></span> km
+                                        </div>
+                                        <div class="distance-radius-wrap fl-wrap">
+                                            <input class="distance-radius rangeslider--horizontal" type="range" min="1"
+                                                max="100" step="1" value="1"
+                                                data-title="Radius around selected destination">
+                                        </div>
+                                    </div> -->
+                                <!-- Checkboxes -->
+                                <div class=" fl-wrap filter-tags">
+                                    <h4>Filter by Tags</h4>
+                                    <input id="check-aa" type="checkbox" name="check">
+                                    <label for="check-aa">Elevator in building</label>
+                                    <input id="check-b" type="checkbox" name="check">
+                                    <label for="check-b">Friendly workspace</label>
+                                    <input id="check-c" type="checkbox" name="check">
+                                    <label for="check-c">Instant Book</label>
+                                    <input id="check-d" type="checkbox" name="check">
+                                    <label for="check-d">Wireless Internet</label>
+                                </div>
+                            </div>
+                            <!-- hidden-listing-filter end -->
+                            <button class="button fs-map-btn">Update</button>
+                            <div class="more-filter-option">More Filters <span></span></div>
+                        </div>
+                        <!-- listsearch-input-wrap end -->
+                    </div>
+                </div>
+                <!-- list-main-wrap-->
+                <div class="list-main-wrap fl-wrap card-listing">
+                    <a class="custom-scroll-link back-to-filters btf-l" href="#lisfw"><i
+                            class="fa fa-angle-double-up"></i><span>Back to Filters</span></a>
+                    <div class="container">
+                        <!-- listing-item -->
+                        {% for data in plat%}
+                        <div class="listing-item">
+                            <article class="geodir-category-listing fl-wrap">
+                                <div class="geodir-category-img">
+                                    <img src="{{data.image.url}}" alt="">
+                                    <div class="overlay"></div>
+                                    <div class="list-post-counter"><span>35</span><i class="fa fa-heart"></i></div>
+                                </div>
+                                <div class="geodir-category-content fl-wrap">
+                                    <a class="listing-geodir-category" href="listing.html">{{data.church_name}}</a>
+                                    <div class="listing-avatar"><a href="author-single.html"><img
+                                                src="{{data.image.url}}" alt=""></a>
+                                        <span class="avatar-tooltip">Added By <strong>Kliff Antony</strong></span>
+                                    </div>
+                                    <h3><a href="listing-single.html">{{data.church_name}}</a></h3>
+                                    <p>{{data.descriptions}}</p>
+                                    <div class="geodir-category-options fl-wrap">
+                                        <div class="listing-rating card-popup-rainingvis" data-starrating2="5">
+                                            <span>(11 reviews)</span>
+                                        </div>
+                                        <div class="geodir-category-location"><a href="#5" class="map-item"><i
+                                                    class="fa fa-map-marker" aria-hidden="true"></i> 27th Brooklyn
+                                                New York, NY 10065</a></div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        {% empty%}
+                        <p>Hakuna tarifa</p>
+                        {% endfor%}
+                    </div>
+                    <a class="load-more-button" href="#">Load more <i class="fa fa-circle-o-notch"></i> </a>
+                </div>
+                <!-- list-main-wrap end-->
+            </div>
+            <!--col-list-wrap -->
+            <div class="limit-box fl-wrap"></div>
+            <!--section -->
+            <section class="gradient-bg">
+                <div class="cirle-bg">
+                    <div class="bg" data-bg="images/bg/circle.png"></div>
+                </div>
+                <!-- <div class="container">
+                        <div class="join-wrap fl-wrap">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h3>Join our online community</h3>
+                                    <p>Grow your marketing and be happy with your online business</p>
+                                </div>
+                                <div class="col-md-4"><a href="#" class="join-wrap-btn modal-open">Sign Up <i
+                                            class="fa fa-sign-in"></i></a></div>
+                            </div>
+                        </div>
+                    </div> -->
+            </section>
+            <!--section end -->
+        </div>
+        <!--content end -->
+    </div>
+    <!-- wrapper end -->
+    <!--footer -->
+    <!-- <footer class="main-footer dark-footer  "> -->
+    <!-- <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="footer-widget fl-wrap">
+                            <h3>About Us</h3>
+                            <div class="footer-contacts-widget fl-wrap">
+                                <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus.
+                                    Nulla eu mi magna. Etiam suscipit commodo gravida. Lorem ipsum dolor sit amet,
+                                    consectetuer adipiscing elit, sed diam. </p>
+                                <ul class="footer-contacts fl-wrap">
+                                    <li><span><i class="fa fa-envelope-o"></i> Mail :</span><a href="#"
+                                            target="_blank">yourmail@domain.com</a></li>
+                                    <li> <span><i class="fa fa-map-marker"></i> Adress :</span><a href="#"
+                                            target="_blank">USA 27TH Brooklyn NY</a></li>
+                                    <li><span><i class="fa fa-phone"></i> Phone :</span><a href="#">+7(111)123456789</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="footer-widget fl-wrap">
+                            <h3>Our Last News</h3>
+                            <div class="widget-posts fl-wrap">
+                                <ul>
+                                    <li class="clearfix">
+                                        <a href="#" class="widget-posts-img"><img src="{% static 'home/images/1.jpg'%}" class="respimg"
+                                                alt=""></a>
+                                        <div class="widget-posts-descr">
+                                            <a href="#" title="">Vivamus dapibus rutrum</a>
+                                            <span class="widget-posts-date"> 21 Mar 09.05 </span>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <a href="#" class="widget-posts-img"><img src="{% static 'home/images/2.jpg'%}" class="respimg"
+                                                alt=""></a>
+                                        <div class="widget-posts-descr">
+                                            <a href="#" title=""> In hac habitasse platea</a>
+                                            <span class="widget-posts-date"> 7 Mar 18.21 </span>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <a href="#" class="widget-posts-img"><img src="{% static 'home/images/3.jpg'%}" class="respimg"
+                                                alt=""></a>
+                                        <div class="widget-posts-descr">
+                                            <a href="#" title="">Tortor tempor in porta</a>
+                                            <span class="widget-posts-date"> 7 Mar 16.42 </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="footer-widget fl-wrap">
+                            <h3>Our Twitter</h3>
+                            <div id="footer-twiit"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="footer-widget fl-wrap">
+                            <h3>Subscribe</h3>
+                            <div class="subscribe-widget fl-wrap">
+                                <p>Want to be notified when we launch a new template or an udpate. Just sign up and
+                                    we'll send you a notification by email.</p>
+                                <div class="subcribe-form">
+                                    <form id="subscribe">
+                                        <input class="enteremail" name="email" id="subscribe-email" placeholder="Email"
+                                            spellcheck="false" type="text">
+                                        <button type="submit" id="subscribe-button" class="subscribe-button"><i
+                                                class="fa fa-rss"></i> Subscribe</button>
+                                        <label for="subscribe-email" class="subscribe-message"></label>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="footer-widget fl-wrap">
+                                <div class="footer-menu fl-wrap">
+                                    <ul>
+                                        <li><a href="#">Home </a></li>
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Listing</a></li>
+                                        <li><a href="#">Contacts</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+    <!-- <div class="sub-footer fl-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="about-widget">
+                                <img src="images/logo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="copyright"> &#169; Citybook 2018 . All rights reserved.</div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="footer-social">
+                                <ul>
+                                    <li><a href="#" target="_blank"><i class="fa fa-facebook-official"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fa fa-chrome"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fa fa-vk"></i></a></li>
+                                    <li><a href="#" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+    </footer>
+    <!--footer end  -->
+    <!--register form -->
+    <div class="main-register-wrap modal">
+        <div class="main-overlay"></div>
+        <div class="main-register-holder">
+            <div class="main-register fl-wrap">
+                <div class="close-reg"><i class="fa fa-times"></i></div>
+                <h3>Sign In <span>City<strong>Book</strong></span></h3>
+                <div class="soc-log fl-wrap">
+                    <p>For faster login or register use your social account.</p>
+                    <a href="#" class="facebook-log"><i class="fa fa-facebook-official"></i>Log in with Facebook</a>
+                    <a href="#" class="twitter-log"><i class="fa fa-twitter"></i> Log in with Twitter</a>
+                </div>
+                <div class="log-separator fl-wrap"><span>or</span></div>
+                <div id="tabs-container">
+                    <ul class="tabs-menu">
+                        <li class="current"><a href="#tab-1">Login</a></li>
+                        <li><a href="#tab-2">Register</a></li>
+                    </ul>
+                    <div class="tab">
+                        <div id="tab-1" class="tab-content">
+                            <div class="custom-form">
+                                <form method="post" name="registerform">
+                                    <label>Username or Email Address * </label>
+                                    <input name="email" type="text" onClick="this.select()" value="">
+                                    <label>Password * </label>
+                                    <input name="password" type="password" onClick="this.select()" value="">
+                                    <button type="submit" class="log-submit-btn"><span>Log In</span></button>
+                                    <div class="clearfix"></div>
+                                    <div class="filter-tags">
+                                        <input id="check-a" type="checkbox" name="check">
+                                        <label for="check-a">Remember me</label>
+                                    </div>
+                                </form>
+                                <div class="lost_password">
+                                    <a href="#">Lost Your Password?</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <div id="tab-2" class="tab-content">
+                                <div class="custom-form">
+                                    <form method="post" name="registerform" class="main-register-form"
+                                        id="main-register-form2">
+                                        <label>First Name * </label>
+                                        <input name="name" type="text" onClick="this.select()" value="">
+                                        <label>Second Name *</label>
+                                        <input name="name2" type="text" onClick="this.select()" value="">
+                                        <label>Email Address *</label>
+                                        <input name="email" type="text" onClick="this.select()" value="">
+                                        <label>Password *</label>
+                                        <input name="password" type="password" onClick="this.select()" value="">
+                                        <button type="submit" class="log-submit-btn"><span>Register</span></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--register form end -->
+</div>
+<!-- Main end -->
+<!--=============== Listing scripts  ===============-->
+<script type="text/javascript" src="{% static 'home/js/jquery.js'%}"></script>
+<script type="text/javascript" src="{% static 'home/js/plugins.js'%}"></script>
+<script type="text/javascript" src="{% static 'home/js/scripts.js'%}"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwJSRi0zFjDemECmFl9JtRj1FY7TiTRRo&libraries=places&callback=initAutocomplete"></script>
+<script type="text/javascript" src="{% static 'home/js/map_infobox.js'%}"></script>
+<script type="text/javascript" src="{% static 'home/js/markerclusterer.js'%}"></script>
+<script type="text/javascript" src="{% static 'home/js/maps.js'%}"></script>
+<!-- =============== scripts  ===============
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwJSRi0zFjDemECmFl9JtRj1FY7TiTRRo&libraries=places&callback=initAutocomplete"></script>
+    <script type="text/javascript" src="js/map_infobox.js"></script>
+    <script type="text/javascript" src="js/markerclusterer.js"></script>
+    <script type="text/javascript" src="js/maps.js"></script> -->
+</body>
+{% endblock contents%}
+
+
+
+</html>

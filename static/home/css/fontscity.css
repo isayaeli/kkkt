@@ -1,0 +1,53 @@
+@font-face {
+  font-family: cityone;
+  src: url("cityone.eot");
+  src: url("cityone.eot?#iefix") format("embedded-opentype"),
+    url("cityone.woff") format("woff"), url("cityone.ttf") format("truetype"),
+    url("cityone.svg#cityone") format("svg");
+}
+
+/* Bold */
+@font-face {
+  font-family: citytwo;
+  src: url("citytwo.eot");
+  src: url("citytwo.eot?#iefix") format("embedded-opentype"),
+    url("citytwo.woff2") format("woff2"), url("citytwo.woff") format("woff"),
+    url("citytwo.ttf") format("truetype"),
+    url("citytwo.svg#citytwo") format("svg");
+}
+
+/* Medium */
+@font-face {
+  font-family: "citythree";
+  src: url("citythree");
+  src: url("citythree.eot?#iefix") format("embedded-opentype"),
+    url("citythree.woff2") format("woff2"), url("citythree.woff") format("woff"),
+    url("citythree.ttf") format("truetype"),
+    url("citythree.svg#citythree") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Regular */
+@font-face {
+  font-family: "cityfour";
+  src: url("cityfour");
+  src: url("cityfour.eot?#iefix") format("embedded-opentype"),
+    url("cityfour.woff2") format("woff2"), url("cityfour.woff") format("woff"),
+    url("cityfour.ttf") format("truetype"),
+    url("cityfour.svg#cityfour") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Light */
+@font-face {
+  font-family: "cityfive";
+  src: url("cityfive");
+  src: url("cityfive.eot?#iefix") format("embedded-opentype"),
+    url("cityfive.woff2") format("woff2"), url("cityfive.woff") format("woff"),
+    url("cityfive.ttf") format("truetype"),
+    url("cityfive.svg#cityfive") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

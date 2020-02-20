@@ -1,0 +1,293 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block title%}
+ <title>Home</title>
+{% endblock title%}
+
+{% block nav%}
+{% endblock nav%}
+
+{% block contents%}
+<body class="no-js">
+
+    <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+    "@type": "WebSite",
+    "name": "City Church Christchurch",
+    "inLanguage": "en-NZ",
+    "url": "https://city.org.nz/#WebSite",
+    "award": [
+      "Best Church Website of 2019, Non-Megachurch Edition",
+      "The 10 Best Church Website Designs Of 2019",
+      "7 Church Website Design Trends with Examples"
+      ],
+    "description":"There's something for everyone at City Church Christchurch and our website is no exception. Browse our online home for great content and join us this Sunday for church in Christchurch.", 
+    "publisher": {
+      "@type": "Organization",
+      "name": "City Church Christchurch",
+      "@id": "https://city.org.nz/#Organization",
+      "image": "https://city.org.nz/img/city_01_300.jpg"
+      }
+    },
+    {
+    "@type": "WebPage",
+      "url": "https://city.org.nz/#WebPage",
+      "name": "City Church Christchurch | Real Church, Real People",
+      "about":"City Church Christchurch",
+      "description":"City Church Christchurch is an authentic church community for everyday people of all ages, cultures and backgrounds. Whoever you are and wherever you've been, you're welcome to join us to connect, be inspired and grow through Jesus and a genuine sense of belonging.", 
+      "lastReviewed":"2020/01/08",
+        "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://city.org.nz/#WebSite"
+      }
+    }
+    ]
+  }
+</script>
+
+    <div class="row row-title-1">
+        <div class="columns small-12 column-title-1">
+            <header class="container container-title-7">
+                <h1 style="margin-top: 350px;" class="heading-white-40-2">Your church in the heart of Christ&shy;church,
+                    with a
+                    heart for
+                    Christ&shy;church.</h1>
+
+                <div class="s130" style="margin-top: -220px;">
+                    <form method="GET" action="/listing/">
+                        <div class="inner-form">
+                            <div class="input-field first-wrap">
+                                <div class="svg-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path
+                                            d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <input id="search" type="text" placeholder="What are you looking for?" name="q" />
+                            </div>
+                            <div class="input-field second-wrap">
+                                <button class="btn-search" type="submit">SEARCH</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </header>
+        </div>
+        <div class="columns small-12 column-title-3">
+            <div class="html-element html-element-title-2">
+                {% for data in video%}
+                <video id="bgvid" autoplay loop muted preload ">
+                    <source src="{{data.video.url}}" type='video/mp4' />
+                </video>
+                {% endfor%}
+                </div>
+            <div id="gradient">
+                <div id="gradient5">
+                    <svg width="100vw" height="100vh" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <radialGradient id="gradient1" cx="50%" cy="50%" fx="50%" fy="50%" r="50%">
+                                <stop offset="0%" stop-color="rgba(210, 33, 54, .9)"></stop>
+                                <stop offset="100%" stop-color="rgba(210, 33, 54)" stop-opacity="0"></stop>
+                            </radialGradient>
+                            <radialGradient id="gradient2" cx="50%" cy="50%" fx="50%" fy="50%" r="50%">
+                                <stop offset="0%" stop-color="rgba(33,118,255, .9)"></stop>
+                                <stop offset="100%" stop-color="rgba(33,118,255)" stop-opacity="0"></stop>
+                            </radialGradient>
+                            <radialGradient id="gradient3" cx="50%" cy="50%" fx="50%" fy="50%" r="50%">
+                                <stop offset="0%" stop-color="rgba(94,35,157, .9)"></stop>
+                                <stop offset="100%" stop-color="rgba(94,35,157)" stop-opacity="0"></stop>
+                            </radialGradient>
+                            <radialGradient id="gradient4" cx="50%" cy="50%" fx="50%" fy="50%" r="50%">
+                                <stop offset="0%" stop-color="rgba(210, 33, 54, .9)"></stop>
+                                <stop offset="100%" stop-color="rgba(210, 33, 54)" stop-opacity="0"></stop>
+                            </radialGradient>
+                        </defs>
+                        <rect x="1" y="1%" width="100%" height="100%" fill="url(#gradient1)">
+                            <animate attributeName="x" values="-40%;0%;-40%" repeatCount="indefinite"></animate>
+                            <animate attributeName="y" values="0%;40%;0%" repeatCount="indefinite"></animate>
+                            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50"
+                                dur="13s" repeatCount="indefinite"></animateTransform>
+                        </rect>
+                        <rect x="1" y="1%" width="100%" height="100%" fill="url(#gradient2)">
+                            <animate attributeName="x" values="-50%;0%;-50%" repeatCount="indefinite"></animate>
+                            <animate attributeName="y" values="50%;0%;50%" repeatCount="indefinite"></animate>
+                            <animateTransform attributeName="transform" type="rotate" from="100 50 50" to="460 50 50"
+                                dur="9s" repeatCount="indefinite"></animateTransform>
+                        </rect>
+                        <rect x="1" y="1%" width="100%" height="100%" fill="url(#gradient3)">
+                            <animate attributeName="x" values="-30%;0%;-30%" repeatCount="indefinite"></animate>
+                            <animate attributeName="y" values="30%;0%;30%" repeatCount="indefinite"></animate>
+                            <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50"
+                                dur="11s" repeatCount="indefinite"></animateTransform>
+                        </rect>
+                        <rect x="1" y="1%" width="100%" height="100%" fill="url(#gradient4)">
+                            <animate attributeName="x" values="-50%;0%;-50%" repeatCount="indefinite"></animate>
+                            <animate attributeName="y" values="0%;50%;0%" repeatCount="indefinite"></animate>
+                            <animateTransform attributeName="transform" type="rotate" from="460 50 50" to="100 50 50"
+                                dur="7s" repeatCount="indefinite"></animateTransform>
+                        </rect>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="columns small-12 column-title-4">
+            <div class="container container-title-2"><a href="#" class="responsive-picture picture-link-arrow-1"
+                    title="Scroll to top" id="scrollToTop">
+                    <picture><img alt="Scroll To Top Arrow" src="https://city.org.nz/img/arrow_up_01_45.png">
+                    </picture>
+                </a>
+            </div>
+            <div class="container container-title-8">
+                <aside class="container container-title-5" id="close-container">
+                    <div class="responsive-picture picture-title-2">
+                        <img alt="Church life" id="random-image" src="#">
+                    </div>
+                    <div class="container container-title-6">
+
+                        <!-- Start notification -->
+                        <div class="x-close-1">&#10006;</div>
+                        <p class="paragraph paragraph-title-1">KKKT Kijitonyama</p>
+                        <h3 class="heading-title-1">Mungu Anaweza Vyote</h3>
+                        <a class="link-button button-small-1" href="{% url 'video'%}">Play</a>
+                        <!-- End notification -->
+
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <div class="columns small-12 column-title-2">
+
+            <nav class="subgrid subgrid-nav-1">
+                <div class="row subgrid-row-nav-1">
+                    <div class="columns small-12 subgrid-column-nav-1">
+                        <a class="link-button button-nav-1" href="https://city.org.nz/index">KKKT</a>
+                        <a href="https://city.org.nz/index" class="responsive-picture logo-1">
+                            <picture>
+                                <img alt="City Church logo" src="{% static 'home/images/image.png'%}">
+                            </picture>
+                        </a>
+                        <div class="container container-nav-1">
+                            <a class="link-button button-nav-2" href="#"></a>
+                            <a class="link-button button-nav-2" href="#"></a>
+                            <a class="link-button button-nav-2" href="#"></a>
+                            <a class="link-button button-nav-2" href="#"></a>
+                            <a class="link-button button-nav-2" href="#"></a>
+                        </div>
+                        <div class="html-element html-element-nav-3">
+                            <div id="nav-icon2">
+
+                            </div>
+                        </div>
+                        <div class="html-element html-element-nav-1">
+                            <div id="nav-icon1">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row subgrid-row-nav-2">
+                    <div class="container container-nav-5">
+                        <a class="link-button button-nav-4" href="https://city.org.nz/ministries">Ministries</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/sozo">Care &amp; Prayer</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/kids">Children</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/connect">Connect Groups</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/kingdom-library">Kingdom
+                            Library</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/missions">Missions</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/prophetic">Prophetic</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/rodem-house">Rodem House</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/schools">School Counselling</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/worship">Worship</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/gen">Young Adults</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/youth">Youth City</a>
+                    </div>
+                    <div class="container container-nav-6">
+                        <a class="link-button button-nav-4" href="https://city.org.nz/next">Next Steps</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/baptism">Baptism</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/pray">Bible &amp; Prayer</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/christchurch">Church</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/connect">Connect Groups</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/sozo">Counselling</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/give">Giving</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/internship">Internship</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/jesus">Jesus</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/missions">Missions</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/prophetic">Prophetic</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/volunteer">Volunteer</a>
+                    </div>
+                    <div class="container container-nav-7">
+                        <a class="link-button button-nav-4" href="https://city.org.nz/contact">Contact Us</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/faqs">FAQ</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/give">Donate</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/prayer">Request Prayer</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/parking">Lease Parking</a>
+                    </div>
+                    <div class="container container-nav-8">
+                        <a class="link-button button-nav-4" href="https://city.org.nz/about">Who We Are</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/christchurch">Church Services</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/garth">Ps Garth</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/faqs">FAQ</a>
+                    </div>
+                    <div class="container container-nav-9">
+                        <a class="link-button button-nav-4" href="https://city.org.nz/kit">City Kit</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/kit/measurements">Bible
+                            Measurements</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/kit/bible-overview">Bible
+                            Overview</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/devotions">Devotions</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/kingdom-library">Kingdom
+                            Library</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/sermons">Messages</a>
+                        <a class="link-button button-nav-4" href="https://city.org.nz/kit/tithe">Tithe Calculator</a>
+                    </div>
+                    <div class="columns small-6 subgrid-column-nav-2">
+                        <div class="html-element html-element-nav-2"><video id="vid_menu" muted preload
+                                poster="/img/b_w_01_700.jpg">
+                                <source src="/vids/b_w_01.mp4" type='video/mp4' />
+                            </video></div>
+                    </div>
+                    <div class="columns small-12 subgrid-column-nav-3 medium-12 large-6">
+                        <div class="container container-nav-2">
+                            <a class="link-button button-nav-3" href="https://city.org.nz/index">Home</a>
+                            <a class="link-button button-nav-3" href="https://city.org.nz/new">New?</a>
+                            <a class="link-button button-nav-3" href="https://city.org.nz/christchurch">Sundays</a>
+                            <a class="link-button button-nav-3" href="https://city.org.nz/events">Events</a>
+                            <span class="span-nav-1"><a class="link-button button-nav-3"
+                                    href="https://city.org.nz/ministries">Ministries</a></span>
+                            <span class="span-nav-2"><a class="link-button button-nav-3" id="nav-ministries"
+                                    href="#">Ministries +</a></span>
+                            <span class="span-nav-1"><a class="link-button button-nav-3"
+                                    href="https://city.org.nz/about">About Us</a></span>
+                            <span class="span-nav-2"><a class="link-button button-nav-3" id="nav-about" href="#">About
+                                    Us +</a></span>
+                        </div>
+                        <div class="container container-nav-3">
+                            <span class="span-nav-1"><a class="link-button button-nav-4"
+                                    href="https://city.org.nz/next">Next Steps</a></span>
+                            <span class="span-nav-2"><a class="link-button button-nav-4" id="nav-next" href="#">Next
+                                    Steps +</a></span>
+                            <span class="span-nav-1"><a class="link-button button-nav-4"
+                                    href="https://city.org.nz/kit">Resources</a></span>
+                            <span class="span-nav-2"><a class="link-button button-nav-4" id="nav-kit" href="#">Resources
+                                    +</a></span>
+                            <a class="link-button button-nav-4" href="https://city.org.nz/blog">City Life</a>
+                            <span class="span-nav-1"><a class="link-button button-nav-4"
+                                    href="https://city.org.nz/contact">Contact</a></span>
+                            <span class="span-nav-2"><a class="link-button button-nav-4" id="nav-contact"
+                                    href="#">Contact +</a></span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+</body>
+
+</html>
+{% endblock contents%}

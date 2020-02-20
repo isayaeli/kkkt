@@ -1,0 +1,149 @@
+
+{% extends 'base.html'%}
+{% load static%}
+ 
+{% block title%}
+<title>Church | feeds</title>
+{% endblock title%}
+
+
+
+{% block contents%}
+<link type="text/css" rel="stylesheet" href="{% static 'home/css/reset.css'%}">
+<link type="text/css" rel="stylesheet" href="{% static 'home/css/plugins.css'%}">
+<link type="text/css" rel="stylesheet" href="{% static 'home/css/style.css'%}">
+<link type="text/css" rel="stylesheet" href="{% static 'home/css/color.css'%}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div class="loader-wrap">
+    <div class="pin"></div>
+    <div class="pulse"></div>
+</div>
+
+
+!-- Main   -->
+<div id="main">
+    <!-- wrapper -->
+    <div id="wrapper">
+        <!--content -->
+        <div class="content">
+            <!--section -->
+            <section id="sec1">
+                <!-- container -->
+                <div class="container">
+                    <!-- profile-edit-wrap -->
+                    <div class="profile-edit-wrap">
+                        <div class="profile-edit-page-header">
+                            {% if request.user%}
+                            <h2>Karibu Sana {{user.username|capfirst}}</h2>
+                            {% else%}
+                            <h2>Karibu Sana</h2>
+                            {% endif%}
+                            <div class="breadcrumbs">
+                                <a href="#">Home</a>
+                                <a href="#">Dasboard</a>
+                                <a href="{% url 'feeds' %}">Feed</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                
+                                <div class="fixed-bar fl-wrap">
+                                    <div class="user-profile-menu-wrap fl-wrap">
+                                        <!-- user-profile-menu-->
+                                        <div class="user-profile-menu">
+                                            <img src="{{data.image.url}}" alt="">
+                                        </div>
+                                        <!-- user-profile-menu end-->
+                                        <!-- user-profile-menu-->
+                                        <div class="user-profile-menu">
+                                          <h1>{{ user.username}}</h1>
+                                        </div>
+                                        <!-- user-profile-menu end-->
+                                        <!-- <a href="#" class="log-out-btn">Log Out</a> -->
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="col-md-9" style="padding-left: 50px;">
+                                {% for feed in feed %}
+                                <div class="post" style=" border: 1px solid #97d5f1; box-shadow: 2px 2px 5px rgba(0,0,0,0.6); width: 650px; border-radius: 10px;">
+                                    <br>
+                                    <div class="row">
+                                    <div class="col-md-3" style="margin-left: 20;">
+                                        <div class="image">
+                                            <img src="{{feed.posted_by.image.url}}" alt="image here" style="border-radius: 100px; width: 100px; height: 100px;">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <br>
+                                        <b><p style="text-align:left; font-weight: bolder; font-size: 20;">{{feed.posted_by}}</p></b>
+                                        <b><p style="text-align:left; font-weight: bolder; font-size: 20;">2 hours ago</p></b>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="feedInfo" style="text-align: left; margin-left: 10px; ">
+                                    {% if feed.description%}
+                                    <p style="font-size: 18;" >{{feed.description}}</p>
+                                    {% endif%}
+                                     {% if feed.image%}
+                                     <div class="feedimg" style="text-align: center;  margin-left: 0px; margin-right: 5px;">
+                                        <img src="{{feed.image.url}}"" alt="" style="width:100%; border-radius: 5px;">
+                                     </div>
+                                     {% endif%}
+                                </div>
+                                <br>
+                                <a href="{% url 'feed-details' feed.id%}"><b>More</b></a>
+                            </div>
+                            <br><br>
+                            {% endfor%}
+                        </div>
+                        
+                       
+                    </div>
+                    <!--profile-edit-wrap end -->
+                </div>
+                <!--container end -->
+            </section>
+            <!-- section end -->
+            <div class="limit-box fl-wrap"></div>
+            <!--section -->
+            <section class="gradient-bg" style="height: 30px;">
+                <div class="cirle-bg">
+                    <div class="bg" data-bg="images/bg/circle.png"></div>
+                </div>
+                <div class="container">
+                    <div class="join-wrap fl-wrap">
+                        <div class="row">
+                            <div class="col-md-8" style="line-height: 70px;">
+                                <!-- <h3>Do You Have Questions ?</h3>
+                                <p>Lorem ipsum dolor sit amet, harum dolor nec in, usu molestiae at no.</p>
+                            </div>
+                            <div class="col-md-4"><a href="contacts.html" class="join-wrap-btn">Get In Touch <i
+                                        class="fa fa-envelope-o"></i></a></div> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section end -->
+        </div>
+    </div>
+    <!-- wrapper end -->
+    <!--footer -->
+    <!--footer end  -->
+    <a class="to-top"><i class="fa fa-angle-up"></i></a>
+</div>
+<!-- Main end -->
+
+
+<!--=============== scripts  ===============-->
+<script type="text/javascript" src="{% static 'home/js/jquery.js'%}"></script>
+<script type="text/javascript" src="{% static 'home/js/plugins.js'%}"></script>
+<script type="text/javascript" src="{% static 'home/js/scripts.js'%}"></script>
+<script type="text/javascript"
+    src="http://maps.google.com/maps/api/js?key=AIzaSyDwJSRi0zFjDemECmFl9JtRj1FY7TiTRRo"></script>
+<script type="text/javascript" src="js/map-add.js"></script>
+{%endblock contents%}
+
+{% block footer%}
+{%endblock footer%}
